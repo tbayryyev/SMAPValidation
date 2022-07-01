@@ -4,10 +4,8 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 
-
 csv_input = pd.read_csv('Millbrook1.csv')   # the csv with coordinates of Millbrook Soil Moisture data collecting stations
 csv_input2 = pd.read_csv('MB.csv')   # The csv with coordinates of Millbrook Soil Moisture data collecting stations and all recorded data of soil moisture at each station for all 720 days
-
 csv_dates = pd.read_csv('Dates.csv') # all the dates of which Soil Moisture data was collected on at the Millbrook site
 
 
@@ -50,8 +48,6 @@ for i in range(1,721):
     </OGRVRTDataSource>") 
     f.close()
 
-
-    
     #creating the month day and year format for the tiff file name (need this format to later upload these tiff files into google earth engine)
     day = str(int(csv_dates.iloc[i-1][1]))
     month = str(int(csv_dates.iloc[i-1][2]))
@@ -63,27 +59,6 @@ for i in range(1,721):
     if len(month)!= 2: 
         month = '0' + month
 
-
-        
     #rasterize the data we have processed to convert from csv file to a raster file which we can later use in our google earth engine app
     r = gdal.Rasterize('SM'+month+day+year+'.tif', 'output.vrt', outputSRS= 'EPSG:4326', xRes = 0.0009, yRes = -0.0009, attribute = "moisture",noData = np.nan)
     r = None
-
-   
-
-    
-
-    
-
-   
-
-        
-    
-
- 
-
-
-
-
-
-
