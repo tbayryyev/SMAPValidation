@@ -64,7 +64,6 @@ var merged = SMAP.merge(Millbrook);  // merges the two image collections (SMAP +
 
 
 
-
 var shp = ee.FeatureCollection('users/mabdelka/MB_st');
 
 
