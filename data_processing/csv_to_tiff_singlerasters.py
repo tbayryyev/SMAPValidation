@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 csv_input = pd.read_csv('Millbrook1.csv')   # the csv with coordinates of Millbrook Soil Moisture data collecting stations
 csv_input2 = pd.read_csv('MB.csv')   # The csv with coordinates of Millbrook Soil Moisture data collecting stations and all recorded data of soil moisture at each station for all 720 days
 
-csv_dates = pd.read_csv('Dates.csv') # all the dates of which Soil Moisture data was collected at the Millbrook site
+csv_dates = pd.read_csv('Dates.csv') # all the dates of which Soil Moisture data was collected on at the Millbrook site
 
 
 #Loop through for all 720 days of data (overwriting the same csv and vrt files to save storage)
